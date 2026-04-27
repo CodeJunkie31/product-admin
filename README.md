@@ -1,77 +1,36 @@
-<<<<<<< HEAD
-# product-admin
-=======
-# React + TypeScript + Vite
+System Architecture
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project follows a simplified frontend layered architecture:
 
-Currently, two official plugins are available:
+Presentation Layer → React Components (UI)
+Logic Layer → Hooks & Services
+Data Layer → Mock/API services (expandable to backend)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This aligns with the principle of separating concerns to improve maintainability and scalability in software systems.
 
-## React Compiler
+“Well-structured software is easier to test, maintain, and extend over time.”
+— Martin Fowler (Refactoring, 2018)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+src/
+ ├── components/        # Reusable UI components
+ ├── pages/             # Route-level pages (Dashboard, etc.)
+ ├── models/            # TypeScript interfaces (Product model)
+ ├── services/          # Business logic & API handling
+ ├── hooks/             # Custom React hooks (if applicable)
+ ├── App.tsx            # Root application component
+ └── main.tsx           # Entry point
 
-## Expanding the ESLint configuration
+References (Harvard Style)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Fowler, M. (2018) Refactoring: Improving the Design of Existing Code. 2nd edn. Boston: Addison-Wesley.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Martin, R.C. (2017) Clean Architecture: A Craftsman’s Guide to Software Structure and Design. Boston: Pearson.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+MDN Web Docs (2025) React Documentation. Available at: https://react.dev
+ (Accessed: 24 April 2026).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+MDN Web Docs (2025) TypeScript Guide. Available at: https://www.typescriptlang.org/docs/
+ (Accessed: 23 April 2026).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
->>>>>>> e97d398 (Product Dashboard)
+Vite (2025) Vite Build Tool Documentation. Available at: https://vitejs.dev/guide/
+ (Accessed: 27 April 2026).
