@@ -1,0 +1,57 @@
+body {
+  background-color: #16131F;
+  color: #F0D9E4;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card {
+  background-color: #4A3F4B;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #C1A0AC;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: gray;
+}
+.card {
+  background-color: #4A3F4B;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+/*  Makes it horizontal */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/*  Controls image size properly */
+.product-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.2s;
+}
